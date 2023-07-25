@@ -18,6 +18,7 @@ class Program
             Console.WriteLine("5. Print Pattern 1");
             Console.WriteLine("6. Print Pattern 2");
             Console.WriteLine("7. Reverse Word");
+            Console.WriteLine("8. Sum of Digits");
             Console.WriteLine("0. Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -104,6 +105,15 @@ class Program
                         s = Console.ReadLine();
                         StringManipulation str = new StringManipulation();
                         str.ReverseWords(s);
+                        break;
+                    }
+                case 8:
+                    {
+                        int n;
+                        Console.WriteLine("Enter Number");
+                        n = Convert.ToInt32(Console.ReadLine());
+                        DigitManipulation dm = new DigitManipulation();
+                        Console.WriteLine($"Sum of Digits is {dm.SumOfDigits(n)}"); 
                         break;
                     }
             }
