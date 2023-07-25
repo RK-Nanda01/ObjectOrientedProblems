@@ -80,6 +80,34 @@ namespace ObjectOrientedProblems
             Console.WriteLine($"Minimum Element is {min}");
         }
 
+        public int[] GetLowestNumbers(int[] arr)
+        {
+            int[] res = new int[3];
+            res[0] = int.MaxValue; // Contains firstLowest
+            res[1] = int.MaxValue; // Contains secondLowest
+            res[2] = 0; // Contains sum of array
+            foreach (int num in arr)
+            {
+                if (num < res[0])
+                {
+                    res[1] = res[0];
+                    res[0] = num;
+                }
+                else if (num < res[1] && num != res[0])
+                {
+                    res[1] = num;
+                }
+                if(num >=0 )
+                {
+                    res[2] += num;
+                }
+            }
+
+
+
+            return res;
+        }
+
     }
 	
 }

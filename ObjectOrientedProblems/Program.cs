@@ -19,7 +19,8 @@ class Program
             Console.WriteLine("6. Print Pattern 2");
             Console.WriteLine("7. Reverse Word");
             Console.WriteLine("8. Sum of Digits");
-            Console.WriteLine("9. Convert First Letter to Capital");    
+            Console.WriteLine("9. Convert First Letter to Capital");
+            Console.WriteLine("10. Find 2 Lowest Number and print sum");
             Console.WriteLine("0. Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -127,6 +128,19 @@ class Program
                         res = s.CapitalizeFirstLetter(str);
                         Console.WriteLine($"Before Capitalization--> {str}");
                         Console.WriteLine($"After Capitalization--> {res}");
+                        break;
+                    }
+                case 10:
+                    {
+                        int n;
+                        Console.WriteLine("Enter the size of the array");
+                        n = Convert.ToInt32(Console.ReadLine());
+                        ArrayManipulation a = new ArrayManipulation();
+                        int[] arr = a.initialiseArray(n);
+                        int[] res = a.GetLowestNumbers(arr);
+                        Console.WriteLine($"First Minimum--> {res[0]}");
+                        Console.WriteLine($"Second Minimum--> {res[1]}");
+                        Console.WriteLine($"Sum of Array--> {res[2]}");
                         break;
                     }
             }
