@@ -15,6 +15,7 @@ class Program
             Console.WriteLine("2. Print Unique Elements of array");
             Console.WriteLine("3. Print Frequency of Elements of array");
             Console.WriteLine("4. Find Maximum and Minimum Element in array");
+            Console.WriteLine("5. Print Pattern 1");
             Console.WriteLine("0. Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -78,6 +79,13 @@ class Program
 
                         a.MaxAndMin(arr);
                         
+                        break;
+                    }
+                case 5:
+                    {
+                       
+                        Pattern p = new Pattern();
+                        p.PrintPattern1();
                         break;
                     }
             }
