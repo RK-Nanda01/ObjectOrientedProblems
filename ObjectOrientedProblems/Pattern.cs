@@ -14,6 +14,23 @@ namespace ObjectOrientedProblems
 				Console.Write("\n");
 			}
 		}
-	}
+        public void PrintPattern2()
+        {
+            for (int i = 7; i >= 1; i--)
+            {
+				if(i == 7 || i== 1)
+				{
+					Console.Write("*******");
+				}
+
+				else
+				{
+                    Console.Write("*     *");
+                }
+
+                Console.Write("\n");
+            }
+        }
+    }
 }
 
