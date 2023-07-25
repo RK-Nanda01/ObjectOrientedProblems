@@ -38,6 +38,30 @@ namespace ObjectOrientedProblems
 
             return totalDuplicates;
         }
+
+        public List<int> UniqueElements(int[] arr)
+        {
+            Dictionary<int, int> dupCount = new Dictionary<int, int>();
+
+
+            foreach (int num in arr)
+            {
+                if (dupCount.ContainsKey(num))
+                    dupCount[num]++;
+                else
+                    dupCount[num] = 1;
+            }
+
+
+            List<int> uniqueElements = new List<int>();
+            foreach (var pair in dupCount)
+            {
+                if (pair.Value == 1)
+                    uniqueElements.Add(pair.Key);
+            }
+
+            return uniqueElements;
+        }
     }
 	
 }
