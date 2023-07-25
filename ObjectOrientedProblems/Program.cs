@@ -96,6 +96,15 @@ class Program
                         p.PrintPattern2();
                         break;
                     }
+                case 7:
+                    {
+                        string s;
+                        Console.WriteLine("Enter string");
+                        s = Console.ReadLine();
+                        StringManipulation str = new StringManipulation();
+                        str.ReverseWords(s);
+                        break;
+                    }
             }
         }
     }
