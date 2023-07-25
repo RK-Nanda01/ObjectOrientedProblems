@@ -27,6 +27,30 @@ namespace ObjectOrientedProblems
             Console.WriteLine("\n");
 
         }
-	}
+
+        public string CapitalizeFirstLetter(string s)
+        {
+            string[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = CapitalizeWord(words[i]);
+            }
+
+            return string.Join(" ", words);
+        }
+
+        public string CapitalizeWord(string word)
+        {
+            if (string.IsNullOrEmpty(word))
+            {
+                return string.Empty;
+            }
+
+            char[] charArray = word.ToCharArray();
+            charArray[0] = char.ToUpper(charArray[0]);
+            return new string(charArray);
+        }
+    }
 }
 

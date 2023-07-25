@@ -19,6 +19,7 @@ class Program
             Console.WriteLine("6. Print Pattern 2");
             Console.WriteLine("7. Reverse Word");
             Console.WriteLine("8. Sum of Digits");
+            Console.WriteLine("9. Convert First Letter to Capital");    
             Console.WriteLine("0. Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -114,6 +115,18 @@ class Program
                         n = Convert.ToInt32(Console.ReadLine());
                         DigitManipulation dm = new DigitManipulation();
                         Console.WriteLine($"Sum of Digits is {dm.SumOfDigits(n)}"); 
+                        break;
+                    }
+                case 9:
+                    {
+                        string str;
+                        string res;
+                        Console.WriteLine("Enter string");
+                        str= Console.ReadLine();
+                        StringManipulation s = new StringManipulation();
+                        res = s.CapitalizeFirstLetter(str);
+                        Console.WriteLine($"Before Capitalization--> {str}");
+                        Console.WriteLine($"After Capitalization--> {res}");
                         break;
                     }
             }
