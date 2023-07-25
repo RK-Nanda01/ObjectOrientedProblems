@@ -15,20 +15,26 @@ namespace ObjectOrientedProblems
 
             return arr;
         }
-		public int DuplicateCount(int[] arr)
-		{
+
+        public Dictionary<int,int> GetFrequency(int[] arr)
+        {
             Dictionary<int, int> dupCount = new Dictionary<int, int>();
 
-           
             foreach (int num in arr)
             {
                 if (dupCount.ContainsKey(num))
                     dupCount[num]++;
                 else
-                   dupCount[num] = 1;
+                    dupCount[num] = 1;
             }
 
-            
+            return dupCount;
+        }
+        public int DuplicateCount(int[] arr)
+		{
+            Dictionary<int, int> dupCount = new Dictionary<int, int>();
+            dupCount = GetFrequency(arr);
+
             int totalDuplicates = 0;
             foreach (var pair in dupCount)
             {
@@ -42,18 +48,9 @@ namespace ObjectOrientedProblems
         public List<int> UniqueElements(int[] arr)
         {
             Dictionary<int, int> dupCount = new Dictionary<int, int>();
-
-
-            foreach (int num in arr)
-            {
-                if (dupCount.ContainsKey(num))
-                    dupCount[num]++;
-                else
-                    dupCount[num] = 1;
-            }
-
-
             List<int> uniqueElements = new List<int>();
+
+            dupCount = GetFrequency(arr);
             foreach (var pair in dupCount)
             {
                 if (pair.Value == 1)
@@ -62,6 +59,7 @@ namespace ObjectOrientedProblems
 
             return uniqueElements;
         }
+        
     }
 	
 }
