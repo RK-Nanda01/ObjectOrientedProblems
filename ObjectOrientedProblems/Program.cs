@@ -17,6 +17,7 @@ class Program
             Console.WriteLine("4. Find Maximum and Minimum Element in array");
             Console.WriteLine("5. Print Pattern 1");
             Console.WriteLine("6. Print Pattern 2");
+            Console.WriteLine("7. Reverse Word");
             Console.WriteLine("0. Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
